@@ -2,8 +2,10 @@ fastapi
 uvicorn[standard]
 pydantic
 python-jose[cryptography]
+pyjwt
 passlib[bcrypt]
 jinja2
 httpx
 python-dotenv
 sqlalchemy
+supabase
