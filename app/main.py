@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
 from app.core.security import supabase
+from app.core.metabolism import UserProfile, calculer_profil_complet
 
 app = FastAPI(title="Smart Fridge & Nutrition Coach")
 
@@ -9,6 +10,11 @@ app = FastAPI(title="Smart Fridge & Nutrition Coach")
 @app.get("/")
 async def read_root():
     return {"message": "Smart Fridge & Nutrition Coach API is running"}
+
+
+@app.post("/profil")
+async def calculer_profil(profil: UserProfile):
+    return calculer_profil_complet(profil)
 
 
 @app.post("/signup")
