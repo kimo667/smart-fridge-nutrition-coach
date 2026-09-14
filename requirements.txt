@@ -9,3 +9,4 @@ httpx
 python-dotenv
 sqlalchemy
 supabase
+python-multipart
